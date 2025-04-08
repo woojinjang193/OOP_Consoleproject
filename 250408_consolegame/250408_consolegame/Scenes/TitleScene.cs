@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _250408_consolegame
+namespace _250408_consolegame.Scenes
 {
     public class TitleScene : BaseScene
     {
@@ -22,8 +22,8 @@ namespace _250408_consolegame
 
         }
         public override void Result()  
-        { 
-
+        {
+            Game.ChangeScene(SceneType.Map1);
         }
     }
 }
