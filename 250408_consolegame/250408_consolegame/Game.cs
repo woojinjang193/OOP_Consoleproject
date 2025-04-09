@@ -24,7 +24,7 @@ namespace _250408_consolegame
 
             while (gameOver == false)
             {
-                Console.Clear();
+                //Console.Clear();
 
                 curScene.Render();
                 curScene.Input();
@@ -49,8 +49,9 @@ namespace _250408_consolegame
             sceneDic = new Dictionary<SceneType, BaseScene>();
             sceneDic.Add(SceneType.Title, new TitleScene());
             sceneDic.Add(SceneType.Map1, new Map1());
-            sceneDic.Add(SceneType.Map2, new TestScene2());
-            sceneDic.Add(SceneType.Map3, new TestScene3());
+            sceneDic.Add(SceneType.Map2, new Map2());
+            sceneDic.Add(SceneType.Map3, new Map3());
+            sceneDic.Add(SceneType.Opening, new OpeningScene());
 
             curScene = sceneDic[SceneType.Title];
 

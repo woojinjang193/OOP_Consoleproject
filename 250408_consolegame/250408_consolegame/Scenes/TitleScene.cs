@@ -23,7 +23,7 @@ namespace _250408_consolegame.Scenes
         }
         public override void Result()  
         {
-            Game.ChangeScene(SceneType.Map1);
+            Game.ChangeScene(SceneType.Opening);
         }
     }
 }

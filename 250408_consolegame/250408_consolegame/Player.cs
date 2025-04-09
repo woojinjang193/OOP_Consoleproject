@@ -10,45 +10,82 @@ namespace _250408_consolegame
     public class Player
     {
         public Vector2 position;
+        public Inventory inventory;
+        public bool[,] map;
+        private Vector2 prevPosition; //나중에 확인
 
-        public void print() 
+        private int curHP;
+        public int CurHP { get { return curHP; } }
+        private int maxHP;
+        public int MaxHP { get { return maxHP; } }
+
+        public Player()
         {
+            inventory = new Inventory();
+            maxHP = 100;
+            curHP = maxHP;
+        }
+
+        public void Heal(int amount)
+        {
+            curHP += amount;
+            if(curHP > maxHP)
+            {
+                curHP = maxHP;
+            }
+        }
+
+        public void print()///?????
+        {
+            //플레이어 있던자리 공백으로 덮기
+            Console.SetCursorPosition(prevPosition.x, prevPosition.y);
+            Console.Write(' ');
+
             Console.SetCursorPosition(position.x, position.y);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write('P');
+            Console.Write('⚉');
             Console.ResetColor();
+
+            prevPosition = position;
         }
 
 
         public void Move(ConsoleKey input)
         {
+            Vector2 targetPos = position;
+
             switch (input)
             {
                 case ConsoleKey.UpArrow:
                 case ConsoleKey.W:
-                    position.y--;
+                    targetPos.y--;
 
                     break;
 
                 case ConsoleKey.DownArrow:
                 case ConsoleKey.S:
-                    position.y++;
+                    targetPos.y++;
 
                     break;
 
                 case ConsoleKey.LeftArrow:
                 case ConsoleKey.A:
-                    position.x--;
+                    targetPos.x--;
 
                     break;
 
                 case ConsoleKey.RightArrow:
                 case ConsoleKey.D:
-                    position.x++;
+                    targetPos.x++;
 
                     break;
 
             }
+                if (map[targetPos.y, targetPos.x] == true)
+                {
+                    position = targetPos;
+                }
+            }
         }
     }
-}
+
