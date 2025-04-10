@@ -13,7 +13,7 @@ namespace _250408_consolegame
         public Vector2 position;
         public Inventory inventory;
         public bool[,] map;
-        private Vector2 prevPosition; //나중에 확인
+        private Vector2 prevPosition; 
 
         private int curHP;
         public int CurHP { get { return curHP; } }

@@ -55,7 +55,7 @@ namespace _250408_consolegame.NPCs
             //소주 3개
             if(player.inventory.DoYouHaveThreeSojus())
             {
-                player.inventory.Remove(new Soju(player.position)); // ???
+                player.inventory.Remove(new Soju(player.position)); 
                 Console.SetCursorPosition(25, 2);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("SANGHUN:오 소주 고마워! 아앗 취한당!");
