@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _250408_consolegame.NPCs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,7 @@ namespace _250408_consolegame
             }
         }
 
-        public void print()///?????
+        public void print()
         {
             //플레이어 있던자리 공백으로 덮기
             Console.SetCursorPosition(prevPosition.x, prevPosition.y);
@@ -84,8 +85,10 @@ namespace _250408_consolegame
                 if (map[targetPos.y, targetPos.x] == true)
                 {
                     position = targetPos;
-                }
+            }
+
+            }
             }
         }
-    }
+    
 

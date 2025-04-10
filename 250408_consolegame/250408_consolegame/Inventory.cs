@@ -41,6 +41,19 @@ namespace _250408_consolegame
             }
         }
 
+        public bool DoYouHaveThreeSojus()
+        {
+            if (items.ContainsKey("소주"))
+            {
+                if (items["소주"].count ==3)
+                {
+                    return true;
+                    
+                }
+            }
+            return false;
+        }
+
         public void PrintAll()
         {
             Console.WriteLine("===아이템 목록===");

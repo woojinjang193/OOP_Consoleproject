@@ -8,7 +8,7 @@ namespace _250408_consolegame
 {
     public enum SceneType
     {
-        Title, Opening, Map1, Map2, Map3, Boss
+        Title, Opening, Map1, Map2, Map3, Boss, Ending, CloseScene
     }
     public abstract class BaseScene
     {

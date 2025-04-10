@@ -32,11 +32,14 @@ namespace _250408_consolegame
                 curScene.Result();
             }
             End();
+
         }
 
         public static void ChangeScene(SceneType sceneName)
         {
             curScene = sceneDic[sceneName];
+         
+            
         }
           
         private static void Start() //게임 초기설정
@@ -52,15 +55,23 @@ namespace _250408_consolegame
             sceneDic.Add(SceneType.Map2, new Map2());
             sceneDic.Add(SceneType.Map3, new Map3());
             sceneDic.Add(SceneType.Opening, new OpeningScene());
+            sceneDic.Add(SceneType.Ending, new EndingScene());
+            
 
             curScene = sceneDic[SceneType.Title];
+            
 
             
         }
 
-        private static void End() // 마무리 작업
+        public static void End() // 마무리 작업
         {
+           
+            Console.SetCursorPosition(2, 2);
+            Console.WriteLine("플레이 해주셔서 감사합니다.");
 
+
+            gameOver = true;
         }
     }
 }

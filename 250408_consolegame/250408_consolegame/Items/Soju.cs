@@ -10,14 +10,15 @@ namespace _250408_consolegame.Items
     {
         private Vector2 vector2;
 
-        public Soju(Vector2 position) : base("소주", ConsoleColor.Blue, '♤', position)
+        public Soju(Vector2 position) 
+            : base("소주", ConsoleColor.Yellow, '＊', position)
         {
         }
 
 
         public override void Use()
         {
-            Game.Player.Heal(30);
+           // Game.Player.Heal(30);
         }
     
     }
